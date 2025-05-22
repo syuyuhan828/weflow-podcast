@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>WeFlow</title>
         <style>
             html{
                 margin: 0;
@@ -55,7 +56,7 @@
                 height: 2px;
                 width: 0%;
                 background-color: #fff;
-                transition: .2s;
+                transition: .3s;
             }
             .header-nav-list li:hover::after{
                 width: 100%;
@@ -78,6 +79,7 @@
 
             }
 
+
             .header-nav-list-cv #contact::before{
                 content: "";
                 display: inline-block;
@@ -93,10 +95,10 @@
             }
 
 
-            .header-nav-list-cv #download::before{
+            .header-nav-list-cv #login::before{
                 content: "";
                 display: inline-block;
-                background: url("./img/download-icon.svg");
+                background: url("./img/login-icon.png");
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: contain;
@@ -104,13 +106,14 @@
                 height: 20px;
                 margin: auto 5px;
                 vertical-align: middle;
+                
             }
 
 
             .header-nav-list-item a{
                 text-decoration: none;
                 color: #fff;
-                padding: 10px 10px;
+                padding: 10px 15px;
                 border: 2px solid #fff;
                 border-radius: 40px;
             }
@@ -170,7 +173,7 @@
             <div class="header-Wrapper">
                 <div class="logo-container">
                 <a href="/">
-                    <img src="./img/weflow-logo.png" alt="" width="80" style="margin-left: 50px">
+                    <img src="./img/weflow-logo.png" alt="" width="100" style="margin-left: 50px">
                 </a>
                 </div>
                 <nav class="header-nav">
@@ -183,13 +186,13 @@
 
                 <ul class="header-nav-list-cv">
                     <li class="header-nav-list-item">
-                        <a href="/">
+                        <a href="./contact.html">
                             <span id="contact">Contact</span>
                         </a>
                     </li>
                     <li class="header-nav-list-item">
-                        <a href="/">
-                            <span id="download">Download</span>
+                        <a href="./login.html">
+                            <span id="login">Login</span>
                         </a>
                     </li>
                 </ul>
@@ -267,7 +270,7 @@
             </div>
         </div>
             
-        <script type="module" src="./index.js">
+        <script type="module" src="./JS/index.js">
             
         </script>
 

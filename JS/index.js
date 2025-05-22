@@ -9,6 +9,7 @@ import {CSSPlugin} from "https://cdn.skypack.dev/gsap/CSSPlugin";
 /*
 Observation: 可以加入一些延遲的滑動感覺
 Observation: 可以加入更多的動畫小元件
+Observation: Price Card可以做Hover特效
 */
 gsap.registerPlugin(CSSPlugin, ScrollTrigger);
 
@@ -27,6 +28,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.domElement.style.position = 'absolute';
 renderer.domElement.style.top = 0;
 document.body.appendChild(renderer.domElement);
+
+// 3.1 建立Three.js Hover effect
 
 // 4. 前景 & 後景 clone + 加入 scene
 const firstImg = document.querySelector(".img-container-1"); //前景
@@ -130,7 +133,7 @@ gsap.to(sloganImgObj.element, {
 
 // 8. 建立about-us 物件
 const aboutUsData = {
-    title: "About Us",
+    title: "ABOUT US",
     subtitle: "Dive into The WeFlow Universe",
     content: "At WeFlow, we believe in the transformative power of conversation. An intentional, well-guided dialogue can unlock insights, forge stronger connections, and accelerate progress in any project or learning endeavor.",
     a: "JOIN US NOW"
@@ -425,6 +428,30 @@ priceData.forEach((cardData, i) => {
         object3D: card3D,
         priceCardZoffset: card3D.position.z - camera.position.z,
     })
+
+    // const pricehover = cardDom;
+    // function resetCardStyle(dom) {
+    //     pricehover.style.transformOrigin = "center center";
+    //     pricehover.style.willChange = "transform";
+    //     dom.style.transform = "scale(1.2)";
+    //     dom.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+    //     dom.style.color = "white";
+    //     dom.style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.1)";
+    //     dom.style.transition = "all 0.3s ease";
+    // }
+    // pricehover.addEventListener("mouseon", ()=>{
+    //     pricehover.style.transformOrigin = "center center";
+    //     pricehover.style.backgroundColor = "white";
+    //     pricehover.style.color = "black";
+    //     pricehover.style.cursor = "pointer"
+    // })
+
+    // pricehover.addEventListener("mouseleave", () => resetCardStyle(pricehover));
+
+
+
+
+
 });
 
 
@@ -441,7 +468,7 @@ let rabbitInitPositionY = rabbitImgObj.position.z
 
 window.addEventListener("wheel", e => {
     e.preventDefault();
-    z -= e.deltaY * 0.2;
+    z -= e.deltaY * 0.3;
     z = Math.max(z_min, Math.min(z_max, z));
     camera.position.z = z;
     // console.log("z: ", z)
@@ -479,7 +506,7 @@ window.addEventListener("wheel", e => {
         aboutUsp.style.display  = "block";
         aboutUsa.style.display = "block";
         aboutUsImgClone.style.opacity = "1";;
-        iceCreamPlanetClone.style.backgroundImage = 'url("./img/icecream-planet.png")'
+        iceCreamPlanetClone.style.backgroundImage = 'url("../img/icecream-planet.png")'
         // console.log("about Us image is showing")
 
     } else {
@@ -492,7 +519,7 @@ window.addEventListener("wheel", e => {
         // console.log("about Us image is not showing")
     }
 
-    const serviceStart = 50;
+    const serviceStart = 40;
     const serviceEnd = -50;
     serviceImgObj.position.z = camera.position.z + serviceZOffset;
 
@@ -503,7 +530,7 @@ window.addEventListener("wheel", e => {
         servicep.style.display  = "block";
         servicea.style.display = "block";
         serviceImgClone.style.opacity = "1"
-        servicePlanetClone.style.backgroundImage = 'url("./img/service-planet.png")'
+        servicePlanetClone.style.backgroundImage = 'url("../img/service-planet.png")'
         
     } else {
         serviceh2.style.display = "none";
@@ -550,16 +577,10 @@ window.addEventListener("wheel", e => {
         rabbitAnimation3 = "default";
         rabbitSlideTween.reverse();   // 撥回 x: 30（原位）
         rabbitFloatTween.play();      // 恢復浮動
-    }
-
-    
-    
-
-
-
-    
-    
+    } 
 }, { passive: false });
+
+
 
 
 

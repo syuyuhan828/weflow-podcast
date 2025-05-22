@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="./CSS/login.css" />
+</head>
+<body>
+    <a href="./index.html">
+        <div class="weflow-icon">
+            <img src="./img/weflow-logo.png" alt="">
+        </div>
+    </a>
+    <div class="wave-container">
+        <svg viewBox="0 0 500 500" class="wave-circle">
+        <path id="wavePath" class="wave-path-1" />
+        <path id="wavePath2" class="wave-path-2" />
+        <path id="wavePath3" class="wave-path-3" />
+        </svg>
+
+        <div class="login-form">
+            <h2 id="formTitle">Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required />
+                <input type="password" id="password" placeholder="Password" required />
+                <div class="error-message" id="errorMessage"></div>
+                <button type="submit" class="login-button" id="submitButton">Login</button>
+            </form>
+            <p class="toggle-link" id="toggleLink">New user? Register</p>
+        </div>
+    </div>
+
+    <script src="./JS/login.js"></script>
+</body>
+</html>

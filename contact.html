@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        
+        html{
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                background-color: #f3f4f7;
+            }
+
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* header CSS */
+        .header{
+            width: 100%;
+            position: fixed;
+            margin-top: 0;
+            top: 0;
+            z-index: 9999;
+            background-color: transparent;
+        }
+
+        .header-Wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-start;
+            margin: 5vh auto auto;
+        }
+
+        .header-nav {
+            flex: 1 0 auto;
+            margin-left: 40px;
+        }
+
+        .header-nav ul{
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+        }
+
+        .header-nav-list li{
+            margin: 0 15px;
+            cursor: pointer;
+            color: #000;
+            font-size: 18px;
+        }
+
+        .header-nav-list li::after{
+            content: "";
+            display: block; 
+            height: 2px;
+            width: 0%;
+            background-color: #000;
+            transition: .3s;
+        }
+        .header-nav-list li:hover::after{
+            width: 100%;
+        }
+
+        .header-nav-list-cv{
+            display: flex;
+            margin-left: auto;
+            margin-right: 5px;
+            /* filter: brightness(0) invert(1); 將 SVG 變為白色 */
+        }
+
+        .header-nav-list-cv li{
+            display: flex;
+            flex-wrap: nowrap;
+            list-style-type: none;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 18px;
+            align-items: center;
+        }
+
+        
+
+        .header-nav-list-cv .contact-a{
+            background-image: linear-gradient(90deg, #3b9bf4, #7fe4b3);
+            border: none;
+        }
+
+        .header-nav-list-cv .login-a{
+            background-image: linear-gradient(90deg, #ff6161, #ff9417);
+            border: none;
+        }
+
+        .header-nav-list-cv #contact::before{
+            content: "";
+            display: inline-block;
+            background-image: url("./img/contact-icon.svg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+            margin: auto 5px;
+            vertical-align: middle;
+            
+        }
+
+
+        .header-nav-list-cv #login::before{
+            content: "";
+            display: inline-block;
+            background: url("./img/login-icon.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+            margin: auto 5px;
+            vertical-align: middle;
+            
+        }
+
+
+        .header-nav-list-item a{
+            text-decoration: none;
+            color: #000;
+            padding: 10px 15px;
+            border: 2px solid #000;
+            border-radius: 40px;
+        }
+
+        .contact-us-inpage{
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        .contact-poster{
+            position: relative;
+            z-index: 1;
+            margin-top: 25vh;
+            /* margin-left: 200px; */
+        }
+
+        .contact{
+            font-size: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333333;
+            margin: 0;
+        }
+
+        .contact-text p{
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: "8px 0 0"
+        }
+
+        .questionnaire-form{
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border-radius: 4px;
+            height: auto;
+            width: 100%;
+            padding: 64px 24px;
+        }
+
+        .form-warn{
+            display: flex;
+            color: rgba(241, 83, 83, 0.9);
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .form-warn span{
+            color: rgba(255, 0, 0, 0.9);
+        }
+
+        #contact-us-form{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        #contact-us-form label{
+            display: block;
+            font-size: 14px
+        }
+
+        #question-one{
+            font-size: 16px;
+        }
+
+        form > * > *{
+            box-sizing: border-box;
+        }
+
+        form select {
+            width: 100%;
+            padding: 8px 16px;
+            margin-top: 8px;
+            border-radius: 4px;
+            background-color: #f3f4f7;
+            border: 0;
+            line-height: 32px;
+        }
+
+        form div input{
+            font-size: 16px;
+            padding: 8px 16px;
+            width: 100%;
+            margin-top: 8px;
+            border-radius: 4px;
+            background-color: #f3f4f7;
+            border: 0px;
+            line-height: 32px;
+        }
+
+        form div textarea{
+            font-size: 16px;
+            padding: 8px 16px;
+            width: 100%;
+            margin-top: 8px;
+            border-radius: 4px;
+            height: 10em;
+            background-color: #f3f4f7;
+            border: 0;
+            resize: none;
+        }
+        
+        .submit-btn{
+            width: 200px;
+            border-radius: 9999px;
+            text-align: center;
+            margin: 32px auto auto;
+            background-color: #5167b9;
+            cursor: pointer;
+            border: none;
+
+        }
+
+        .submit-text{
+            position: relative;
+            display: block;
+            padding: 13px 12px 12px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1;
+            z-index: 2;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-Wrapper">
+            <div class="logo-container">
+            <a href="/">
+                <img src="./img/weflow-logo-black.png" alt="" width="100" style="margin-left: 50px">
+            </a>
+            </div>
+            <nav class="header-nav">
+                <ul class="header-nav-list">
+                    <li>About Us</li>
+                    <li>Service</li>
+                    <li>Pricing</li>
+                </ul>
+            </nav>
+
+            <ul class="header-nav-list-cv">
+                <li class="header-nav-list-item">
+                    <a href="./contact.html" class="contact-a">
+                        <span id="contact">Contact</span>
+                    </a>
+                </li>
+                <li class="header-nav-list-item">
+                    <a href="./login.html" class="login-a">
+                        <span id="login">Login</span>
+                    </a>
+                </li>
+            </ul>
+        </div>   
+    </header>
+
+    <div class="contact-us-inpage">
+        <div class="contact-poster">
+            <div class="contact-text">
+                <h1 class="contact">CONTACT</h1>
+                <p>Questions about us?</p>
+            </div>
+        </div>
+
+        <div class="quesitonnaire">
+            <div class="questionnaire-form">
+                <div class="form-warn"><span>Please fill in all of the questions below</span></div>
+                <form id="contact-us-form" action="">
+                    <div class="formItem1">
+                        <label name="" id="question-one"><strong>Consult Type</strong></label>
+                        <select id="question-one-answers">
+                            <option value="not-choose" class="not-choose" name="consult-type[]" >--Select one of the below</option>
+                            <option value="about" name="consult-type[]">About Us</option>
+                            <option value="pricing" name="consult-type[]">Pricing</option>
+                            <option value="Other" name="consult-type[]">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="formItem2">
+                        <label id="question-two"><strong>Tell Us Your Name</strong></label>
+                        <input type="text" placeholder="e.g. John Smith">
+                    </div>
+
+                    <div class="formItem3">
+                        <label for="" id="question-three"><strong>Your Email</strong></label>
+                        <input type="text" placeholder="e.g. WeFlow@gmail.com">
+                    </div>
+
+                    <div class="formItem4">
+                        <label for="" id="question-four">What's On Your Mind
+                        </label>
+                        <textarea name="" id=""></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span class="submit-text">Submit</span>
+                    </button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    
+</body>
+</html>
