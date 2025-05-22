@@ -21,7 +21,7 @@
         /* header CSS */
         .header{
             width: 100%;
-            position: fixed;
+            position: relative;
             margin-top: 0;
             top: 0;
             z-index: 9999;
@@ -81,6 +81,7 @@
             cursor: pointer;
             font-size: 18px;
             align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         
@@ -141,7 +142,7 @@
         .contact-poster{
             position: relative;
             z-index: 1;
-            margin-top: 25vh;
+            margin-top: 2vh;
             /* margin-left: 200px; */
         }
 
@@ -150,6 +151,7 @@
             font-family: Arial, Helvetica, sans-serif;
             color: #333333;
             margin: 0;
+            letter-spacing: 5px;
         }
 
         .contact-text p{
@@ -158,6 +160,7 @@
             margin: "8px 0 0"
         }
 
+
         .questionnaire-form{
             display: flex;
             flex-direction: column;
@@ -165,7 +168,7 @@
             border-radius: 4px;
             height: auto;
             width: 100%;
-            padding: 64px 24px;
+            padding: 64px 24px 64px;
         }
 
         .form-warn{
@@ -177,6 +180,7 @@
 
         .form-warn span{
             color: rgba(255, 0, 0, 0.9);
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         #contact-us-form{
@@ -196,6 +200,10 @@
 
         form > * > *{
             box-sizing: border-box;
+        }
+
+        form div label{
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         form select {
@@ -239,15 +247,17 @@
             background-color: #5167b9;
             cursor: pointer;
             border: none;
+            padding: 10px 15px;
+            font-family: Arial, Helvetica, sans-serif;
 
         }
 
         .submit-text{
             position: relative;
             display: block;
-            padding: 13px 12px 12px;
+            padding: 0 10px;
             color: #fff;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
             line-height: 1;
             z-index: 2;
@@ -303,7 +313,7 @@
                     <div class="formItem1">
                         <label name="" id="question-one"><strong>Consult Type</strong></label>
                         <select id="question-one-answers">
-                            <option value="not-choose" class="not-choose" name="consult-type[]" >--Select one of the below</option>
+                            <option value="not-choose" class="not-choose" name="consult-type[]" style="color: rgba(118, 118, 118, 0.9)" disabled selected hidden>--Select one of the below</option>
                             <option value="about" name="consult-type[]">About Us</option>
                             <option value="pricing" name="consult-type[]">Pricing</option>
                             <option value="Other" name="consult-type[]">Other</option>
@@ -316,12 +326,12 @@
                     </div>
 
                     <div class="formItem3">
-                        <label for="" id="question-three"><strong>Your Email</strong></label>
+                        <label id="question-three"><strong>Your Email</strong></label>
                         <input type="text" placeholder="e.g. WeFlow@gmail.com">
                     </div>
 
                     <div class="formItem4">
-                        <label for="" id="question-four">What's On Your Mind
+                        <label id="question-four"><strong>What's On Your Mind?</strong>
                         </label>
                         <textarea name="" id=""></textarea>
                     </div>
@@ -333,6 +343,10 @@
             </div>
         </div>
     </div>
+
+    <footer style="display: flex; background-color: black; justify-content: center; margin: 32px 0 0">
+        <span style="color: white; font-size: 20px; margin: 16px 0 16px; font-family:Arial, Helvetica, sans-serif;"> &copy; 2025 Weflow, All Rights Reserved</span>
+    </footer>
     
 
     
