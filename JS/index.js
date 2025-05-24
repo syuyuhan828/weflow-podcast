@@ -57,7 +57,7 @@ scene.add(lastObj);
 const rabbitImg = document.querySelector('.rabbit-img-container')
 const rabbitImgClone = rabbitImg.cloneNode(true);
 const initRabbitX = 30;
-const initRabbitY = -15;
+const initRabbitY = -400; //-15
 
 
 rabbitImgClone.style.position = "static";
@@ -78,18 +78,6 @@ let rabbitFloatTween = gsap.to(rabbitImgObj.position, {
     ease: "power1.ease",
 })
 
-gsap.to(rabbitImgObj.scale, {
-    x: 1.05, y: 1.05, z: 0.8,
-    duration: 5,
-    yoyo: true,
-    repeat: -1,
-    ease: "power1.ease",
-})
-
-gsap.to(rabbitImgObj.element, 2, {
-    rotation: 90,
-    transformOrigin: "left center",
-})
 
 
 
